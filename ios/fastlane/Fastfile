@@ -1,0 +1,47 @@
+# default_platform(:ios)
+
+platform :ios do
+  lane :build do
+    gym(
+      export_options: {
+        method: "ad-hoc",
+        provisioningProfiles: {
+          "com.stegvision.StegvisionClient" => "match AdHoc com.stegvision.svapp"
+        }
+      }
+    )
+  end
+
+  lane :prod do
+    gym(
+      export_options: {
+        method: "app-store",
+        provisioningProfiles: {
+          "com.stegvision.StegvisionClient" => "match AppStore com.stegvision.StegvisionClient"
+        }
+      }
+    )
+  end
+end
+
+lane :upload_build do
+  upload_to_testflight(
+    username: "shotes@stegvision.com",
+    app_identifier: "com.stegvision.svapp",
+    ipa: "./fastlane/build/StegvisionClient.ipa"
+  )
+end
+
+lane :basic_icons do
+  appicon(
+    appicon_devices: [:ipad, :iphone, :ios_marketing],
+    appicon_path: "MajorKey/Assets.xcassets"
+  )
+end
+
+lane :new_logo do
+  appicon(
+    appicon_devices: [:ipad, :iphone, :ios_marketing],
+    appicon_path: "NewLogo/Assets.xcassets"
+  )
+end

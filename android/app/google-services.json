@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "717081383940",
+    "project_id": "stegvision-2e837",
+    "storage_bucket": "stegvision-2e837.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:717081383940:android:419a1bdf9b594137ec9151",
+        "android_client_info": {
+          "package_name": "com.stegvisionclient"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "717081383940-a3j0s0kmdhr838rrat8ll66nt0b0qp68.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.stegvisionclient",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "717081383940-l2jd1oeitc24upnhe42q93nhfgj7l6d5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqdtfjgO8mDVMiJM_gGK9eSzjcJgA0n_0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "717081383940-l2jd1oeitc24upnhe42q93nhfgj7l6d5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

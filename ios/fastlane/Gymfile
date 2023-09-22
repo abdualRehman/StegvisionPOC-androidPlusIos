@@ -1,0 +1,6 @@
+scheme("StegvisionClient")
+export_team_id("447ZY4HRX9")
+include_bitcode(false)
+include_symbols(false)
+export_xcargs("-allowProvisioningUpdates")
+output_directory("./fastlane/build")

@@ -1,0 +1,14 @@
+git_url("git@github.com:stegvision/ios-certs-2.git")
+storage_mode("git")
+
+# type("development") # The default type, can be: appstore, adhoc, enterprise or development
+<<<<<<< HEAD
+# type("adhoc")
+type("appstore")
+=======
+# type("appstore")
+type("adhoc")
+>>>>>>> 7564d4fde0e7959b4764ca14e8e67ae781dc06df
+
+app_identifier(["com.stegvision.svapp"])
+username("shotes@stegvision.com")
