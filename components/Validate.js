@@ -18,6 +18,7 @@ import colors from '../constants/colors';
 import fonts from '../constants/fonts';
 import images from '../constants/images';
 import AuthenticateModal from './AuthenticateModal';
+import Button from './common/Button';
 import FailModal from './FailModal';
 import Header from './Header';
 import InfoModal from './InfoModal';
@@ -137,7 +138,9 @@ const Validate = ({navigation}) => {
       {isVisible || isFail || isQue ? (
         <ImageBackground
           style={{flex: 1}}
-          source={{uri: backImg}}></ImageBackground>
+          source={{uri: backImg}}
+          // source={images.detail}
+          ></ImageBackground>
       ) : (
         <RNCamera style={styles.container} ref={cameraRef} captureAudio={false}>
           <Header title="" navigation={navigation} />
@@ -150,11 +153,12 @@ const Validate = ({navigation}) => {
             style={{height: height * 0.5, width, marginTop: 30}}
             source={images.camera_scan}></ImageBackground>
 
-          <TouchableOpacity onPress={validate} style={styles.buttonWrapper}>
+          {/* <TouchableOpacity onPress={validate} style={styles.buttonWrapper}>
 
               <Text style={styles.captureText}>Capture</Text>
 
-          </TouchableOpacity>
+          </TouchableOpacity> */}
+          <Button style={{marginTop:'auto', bottom:30, height:70}} title={'CAPTURE'} onPress={validate} />
         </RNCamera>
       )}
       {isVisible && (

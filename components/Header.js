@@ -13,7 +13,7 @@ import colors from '../constants/colors';
 import fonts from '../constants/fonts';
 import images from '../constants/images';
 
-const Header = ({navigation, title}) => {
+const Header = ({navigation, title, icon}) => {
   return (
     <>
       <SafeAreaView />
@@ -21,8 +21,8 @@ const Header = ({navigation, title}) => {
         <TouchableOpacity onPress={navigation.goBack}>
           <Image
             resizeMode="contain"
-            style={styles.backIcon}
-            source={images.back}
+            style={icon ? styles.leftIcon : styles.backIcon}
+            source={ icon ? icon : images.backArrow}
           />
         </TouchableOpacity>
         <View style={{flex: 1, alignItems: 'center'}}>
@@ -47,6 +47,10 @@ const styles = StyleSheet.create({
   backIcon: {
     height: 40,
     width: 40,
+  },
+  leftIcon:{
+    height: 20,
+    width: 20,
   },
   headerTitle: {
     fontSize: 22,

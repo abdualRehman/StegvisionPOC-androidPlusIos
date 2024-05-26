@@ -13,6 +13,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		659C43942ABE47840004E964 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 659C43932ABE47840004E964 /* Launch Screen.storyboard */; };
 		6EB51FD8298A4967B9666D73 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 964B3E45D5B4420286B115E3 /* Poppins-Regular.ttf */; };
 		7699B88040F8A987B510C191 /* libPods-StegvisionClient-StegvisionClientTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-StegvisionClient-StegvisionClientTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard.xml in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard.xml */; };
@@ -49,6 +50,7 @@
 		5709B34CF0A7D63546082F79 /* Pods-StegvisionClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StegvisionClient.release.xcconfig"; path = "Target Support Files/Pods-StegvisionClient/Pods-StegvisionClient.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-StegvisionClient-StegvisionClientTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StegvisionClient-StegvisionClientTests.debug.xcconfig"; path = "Target Support Files/Pods-StegvisionClient-StegvisionClientTests/Pods-StegvisionClient-StegvisionClientTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-StegvisionClient.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-StegvisionClient.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		659C43932ABE47840004E964 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = LaunchScreen.storyboard.xml; path = StegvisionClient/LaunchScreen.storyboard.xml; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-StegvisionClient-StegvisionClientTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StegvisionClient-StegvisionClientTests.release.xcconfig"; path = "Target Support Files/Pods-StegvisionClient-StegvisionClientTests/Pods-StegvisionClient-StegvisionClientTests.release.xcconfig"; sourceTree = "<group>"; };
 		95975A477FEE4FD9951B37D8 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-SemiBold.ttf"; path = "../components/assets/fonts/Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard.xml */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				D2FA50EE27F8130300CAE319 /* LogoLaunch.storyboard.xml */,
+				659C43932ABE47840004E964 /* Launch Screen.storyboard */,
 			);
 			name = StegvisionClient;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				D2FA50EF27F8130300CAE319 /* LogoLaunch.storyboard.xml in Resources */,
 				D22D316327F8DCCE00808E4D /* GoogleService-Info.plist in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard.xml in Resources */,
+				659C43942ABE47840004E964 /* Launch Screen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				070095858A054415AED3F0BF /* Poppins-Bold.ttf in Resources */,
 				B7788E201D4B412E907F980F /* Poppins-Medium.ttf in Resources */,
@@ -568,7 +572,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2Z55V2JZ5U;
+				DEVELOPMENT_TEAM = 49WUAMMBP8;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = StegvisionClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -600,7 +604,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2Z55V2JZ5U;
+				DEVELOPMENT_TEAM = 49WUAMMBP8;
 				INFOPLIST_FILE = StegvisionClient/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

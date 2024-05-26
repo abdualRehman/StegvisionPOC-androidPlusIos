@@ -20,15 +20,15 @@ const AuthenticateModal = ({isVisible, navigation, onCancel}) => {
       backdropColor={colors.transparent}
       coverScreen
       hasBackdrop
-      style={[styles.container,{backgroundColor: '#FFFFFF',}]}>
+      style={[styles.container,{backgroundColor: 'transparent',}]}>
       <View style={styles.topContainer}>
-        <ActivityIndicator size="large" color={colors.primary} />
-        <Text style={styles.authText}>Authenticating...</Text>
-        <Image
+        <ActivityIndicator size="large" color={colors.white} />
+        <Text style={styles.authText}>Checking Authenticity</Text>
+        {/* <Image
           resizeMode="contain"
           style={styles.nameIcon}
           source={images.name_icon}
-        />
+        /> */}
       </View>
 
       <View style={styles.bottomContainer}>
@@ -57,7 +57,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
     fontSize: 18,
     fontFamily: fonts.Bold,
-    color: colors.primary,
+    color: colors.white,
   },
   nameIcon: {
     width: '60%',
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
   cancel: {
     fontSize: 15,
-    color: colors.grey,
+    color: colors.white,
     fontFamily: fonts.Regular,
     fontWeight: '500',
   },

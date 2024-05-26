@@ -10,7 +10,9 @@ import {
   Text,
   SafeAreaView,
   StyleSheet,
-  Dimensions,Platform
+  Dimensions,
+  Platform,
+  ImageBackground,
 } from 'react-native';
 import colors from '../constants/colors';
 import fonts from '../constants/fonts';
@@ -19,6 +21,8 @@ import images from '../constants/images';
 import Geolocation from '@react-native-community/geolocation';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import crashlytics from '@react-native-firebase/crashlytics';
+import BorderButton from './common/BorderButton';
+import Button from './common/Button';
 
 const {height} = Dimensions.get('window');
 
@@ -26,8 +30,7 @@ const Home = ({route, navigation}) => {
   const [loginElem, setLoginElem] = useState(null);
 
   React.useEffect(() => {
-    if (Platform.OS == 'ios')
-    Geolocation.requestAuthorization();
+    if (Platform.OS == 'ios') Geolocation.requestAuthorization();
 
     const setLogin = () => {
       setLoginElem(
@@ -68,27 +71,37 @@ const Home = ({route, navigation}) => {
   };
 
   return (
-    <View style={homeStyles.container}>
-      <SafeAreaView />
-      <View style={homeStyles.container}>
-        {loginElem}
-        <View style={{flex: 1, justifyContent: 'center'}}>
+    <ImageBackground
+      source={images.backgroundImg}
+      style={{width: '100%', height: '100%'}}>
+      <SafeAreaView style={homeStyles.container}>
+        <View>
+          {/* {loginElem} */}
+          {/* <View style={{flex: 1, justifyContent: 'center'}}>
           <Image
             resizeMode="contain"
             style={homeStyles.scanIcon}
             source={images.scan}
           />
-        </View>
+        </View> */}
 
-        <View style={homeStyles.bottomWrapper}>
-          <TouchableOpacity
+          <View style={homeStyles.bottomWrapper}>
+            <Button
+              style={{width: '100%',}}
+              title={'START SCAN '}
+              onPress={() => navigation.navigate('Validate')}
+              leftIcon={
+                <Image source={images.plus} style={{width: 25, height: 25}} />
+              }
+            />
+            {/* <TouchableOpacity
             style={styles.button}
             onPress={() => navigation.navigate('Validate')}
             // onPress={() => navigation.navigate('MultiScanSuccess')}
           >
             <Text style={styles.buttonText}>Start Authentication</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
+          </TouchableOpacity> */}
+            {/* <TouchableOpacity
             onPress={() => navigation.navigate('History')}
             style={homeStyles.flexWrapper}>
             <Text style={homeStyles.scan}>View Scan History</Text>
@@ -97,13 +110,14 @@ const Home = ({route, navigation}) => {
               style={homeStyles.rightIcon}
               source={images.right}
             />
-          </TouchableOpacity>
-          <Text style={homeStyles.agree}>By proceeding, you agree to the</Text>
+          </TouchableOpacity> */}
+            <BorderButton style={{width: '100%'}} title={'LOGIN'} onPress={() => navigation.navigate('Login')} />
+            {/* <Text style={homeStyles.agree}>By proceeding, you agree to the</Text>
           <Text style={homeStyles.terms}>
             Terms <Text style={{color: colors.lightGray}}>&</Text> Privacy
             Policy
-          </Text>
-          {/*
+          </Text> */}
+            {/*
           <TouchableOpacity
             onPress={() => navigation.navigate('Tests')}
             style={homeStyles.flexWrapper}>
@@ -113,9 +127,10 @@ const Home = ({route, navigation}) => {
             <Text style={homeStyles.agree}>Test Crash</Text>
           </TouchableOpacity>
           */}
+          </View>
         </View>
-      </View>
-    </View>
+      </SafeAreaView>
+    </ImageBackground>
   );
 };
 
@@ -123,8 +138,9 @@ export default Home;
 
 const homeStyles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: colors.white,
+    justifyContent: 'center',
+    width: '100%',
+    height: '100%',
   },
   scan: {
     fontSize: 14,
@@ -146,10 +162,11 @@ const homeStyles = StyleSheet.create({
     marginTop: 4,
   },
   agree: {
-    marginTop: 20,
-    fontSize: 12,
-    alignSelf: 'center',
-    color: colors.lightGray,
+    width: '100%',
+    fontSize: 18,
+    fontWeight: '700',
+    textAlign: 'center',
+    color: '#fff',
     fontFamily: fonts.Regular,
   },
   terms: {
@@ -161,9 +178,13 @@ const homeStyles = StyleSheet.create({
     marginBottom: 20,
   },
   help: {
-    alignSelf: 'flex-end',
-    marginRight: 20,
-    top: 10,
+    alignSelf: 'center',
+    justifyContent: 'center',
+    borderWidth: 1,
+    width: '95%',
+    height: 50,
+    borderRadius: 50,
+    marginTop: 20,
   },
   helpIcon: {
     height: 50,
@@ -175,10 +196,7 @@ const homeStyles = StyleSheet.create({
     alignSelf: 'center',
   },
   bottomWrapper: {
-    justifyContent: 'flex-end',
-    alignItems: 'center',
     paddingHorizontal: 30,
-    height: height * 0.25,
     paddingBottom: 20,
   },
 });

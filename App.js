@@ -8,11 +8,19 @@ import { enableFreeze } from 'react-native-screens';
 
 enableFreeze(true);
 import crashlytics from "@react-native-firebase/crashlytics";
+import SplashScreen from 'react-native-splash-screen';
 
 const App = () => {
   useEffect(() => {
     crashlytics().log("App mounted.");
   }, []);
+
+  useEffect(() => {
+    setTimeout(() => {
+      SplashScreen.hide();
+    }, 2000);
+  }, [])
+  
 
   return (
     <NavigationContainer>

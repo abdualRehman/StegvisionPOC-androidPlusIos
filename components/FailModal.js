@@ -6,9 +6,11 @@ import Modal from 'react-native-modal';
 import colors from '../constants/colors';
 import fonts from '../constants/fonts';
 import images from '../constants/images';
+import Button from './common/Button';
 
 const failMessage = {
-  0: 'Unknown Object Detected',
+  // 0: 'Unknown Object Detected',
+  0: 'INVALID SCAN',
   1: 'Network Timeout',
   2: 'Network Failure',
 };
@@ -19,13 +21,22 @@ const FailModal = ({isVisible, onDone, onTry, failure}) => {
   return (
     <Modal isVisible={isVisible} style={styles.modalWrapper}>
       <View style={styles.container}>
-        <Image style={styles.failIcon} source={images.fail} />
+        <Image
+          style={styles.logo}
+          source={images.appLogo}
+          resizeMode={'contain'}
+        />
+        <Image style={styles.failIcon} source={images.danger} />
         <Text style={styles.unknown}>{message}</Text>
-        <Text style={styles.desc}>
+        {/* <Text style={styles.desc}>
           We were not able to authenticate your {'\n'}product right now.
+        </Text> */}
+        <Text style={styles.desc}>
+          We are unable to authenticate this product! To trv again. ensure the
+          camera is centered, vour lighting is good, and trv again.
         </Text>
 
-        {failure === 0 ? (
+        {/* {failure === 0 ? (
           <Text
             style={styles.seenText}
             onPress={() => {
@@ -34,15 +45,17 @@ const FailModal = ({isVisible, onDone, onTry, failure}) => {
             }}>
             Why am I seeing this?
           </Text>
-        ) : null}
+        ) : null} */}
 
-        <TouchableOpacity style={styles.buttonWrapper} onPress={onDone}>
+        <Button style={{width: '100%', marginBottom:10}} title={'TRY AGAIN'} onPress={onDone} />
+
+        {/* <TouchableOpacity style={styles.buttonWrapper} onPress={onDone}>
           <Text style={styles.buttonTitle}>Try again</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
 
-        <Text style={styles.doneText} onPress={onDone}>
+        {/* <Text style={styles.doneText} onPress={onDone}>
           Done
-        </Text>
+        </Text> */}
       </View>
     </Modal>
   );
@@ -58,14 +71,20 @@ const styles = StyleSheet.create({
   },
   container: {
     width: '100%',
-    backgroundColor: colors.white,
+    backgroundColor: colors.darkBackground,
     borderTopStartRadius: 20,
     borderTopEndRadius: 20,
     padding: 20,
+    paddingHorizontal: 20,
+  },
+  logo: {
+    height: 100,
+    width: 100,
+    alignSelf: 'center',
   },
   failIcon: {
-    height: 110,
-    width: 110,
+    height: 50,
+    width: 50,
     alignSelf: 'center',
     marginTop: 20,
   },
@@ -74,13 +93,16 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     fontSize: 15,
     fontFamily: fonts.Medium,
-    fontWeight: '600',
+    fontWeight: '700',
+    color:colors.white
   },
   desc: {
     alignSelf: 'center',
     textAlign: 'center',
     fontFamily: fonts.Regular,
-    fontSize: 13,
+    fontSize: 14,
+    color:colors.white,
+    marginBottom:20
   },
   seenText: {
     marginTop: 30,

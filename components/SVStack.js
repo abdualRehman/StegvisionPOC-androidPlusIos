@@ -16,6 +16,7 @@ import ProductDetail from './ProductDetail';
 import RNBootSplash from 'react-native-bootsplash';
 import MultiScanSuccess from './MultiScanSuccess';
 import EtudeSuccess from "./EtudeSuccess";
+import Rewards from './Rewards';
 
 const Stack = createNativeStackNavigator();
 
@@ -45,6 +46,7 @@ const SVStack = () => {
       <Stack.Screen name="Login" component={Login} options={{title: 'Login'}} />
       <Stack.Screen name="ProductDetail" component={ProductDetail} />
       <Stack.Screen name="MultiScanSuccess" component={MultiScanSuccess} />
+      <Stack.Screen name="Rewards" component={Rewards} />
     </Stack.Navigator>
   );
 };

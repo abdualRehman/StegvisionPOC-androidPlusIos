@@ -10,4 +10,8 @@ export default {
   red: '#EA3636',
   transparent: 'rgba(0,0,0,0.8)',
   lightOrange: '#F98B2E90',
+  darkBackground:'#201b24',
+  boxColor:'#383B42',
+  idBoxColor:'#292929',
+  placeHolderColor:'#8E8E8E'
 };
